@@ -21,15 +21,21 @@ import {
 } from "@/components/ui/sidebar";
 import { getLoginUrl } from "@/const";
 import { useIsMobile } from "@/hooks/useMobile";
-import { LayoutDashboard, LogOut, PanelLeft, Users } from "lucide-react";
+import { LayoutDashboard, LogOut, PanelLeft, TrendingUp, ShoppingCart, Ship, Package, Bell, Settings, Boxes } from "lucide-react";
 import { CSSProperties, useEffect, useRef, useState } from "react";
 import { useLocation } from "wouter";
 import { DashboardLayoutSkeleton } from './DashboardLayoutSkeleton';
 import { Button } from "./ui/button";
+import { trpc } from "@/lib/trpc";
 
 const menuItems = [
-  { icon: LayoutDashboard, label: "Page 1", path: "/" },
-  { icon: Users, label: "Page 2", path: "/some-path" },
+  { icon: LayoutDashboard, label: "Stock Dashboard", path: "/" },
+  { icon: TrendingUp, label: "Forecasting", path: "/forecast" },
+  { icon: ShoppingCart, label: "Purchase Orders", path: "/purchase-orders" },
+  { icon: Ship, label: "Ship Tracker", path: "/ship-tracker" },
+  { icon: Boxes, label: "SKU Manager", path: "/sku-manager" },
+  { icon: Bell, label: "Alerts", path: "/alerts" },
+  { icon: Settings, label: "Settings", path: "/settings" },
 ];
 
 const SIDEBAR_WIDTH_KEY = "sidebar-width";
@@ -170,9 +176,10 @@ function DashboardLayoutContent({
               </button>
               {!isCollapsed ? (
                 <div className="flex items-center gap-2 min-w-0">
-                  <span className="font-semibold tracking-tight truncate">
-                    Navigation
-                  </span>
+                  <div className="flex flex-col min-w-0">
+                    <span className="font-bold tracking-tight truncate text-primary">Aussie Pal</span>
+                    <span className="text-xs text-muted-foreground truncate">Stock Intelligence</span>
+                  </div>
                 </div>
               ) : null}
             </div>

@@ -1,5 +1,27 @@
 {
   "version": "7",
   "dialect": "mysql",
-  "entries": []
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1773447686467,
+      "tag": "0000_cloudy_lord_tyger",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1773447845918,
+      "tag": "0001_absent_greymalkin",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1773448648865,
+      "tag": "0002_zippy_celestials",
+      "breakpoints": true
+    }
+  ]
 }

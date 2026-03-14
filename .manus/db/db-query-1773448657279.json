@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE `stock_alerts` (\n\t`id` int AUTO_INCREMENT NOT NULL,\n\t`sku` varchar(128),\n\t`alertType` varchar(64) NOT NULL,\n\t`severity` enum('CRITICAL','HIGH','MEDIUM','LOW','INFO') NOT NULL DEFAULT 'INFO',\n\t`message` text NOT NULL,\n\t`isRead` boolean NOT NULL DEFAULT false,\n\t`slackSent` boolean NOT NULL DEFAULT false,\n\t`createdAt` timestamp NOT NULL DEFAULT (now()),\n\tCONSTRAINT `stock_alerts_id` PRIMARY KEY(`id`)\n);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2EjccUxF9kgAB3d.c20f0dec0ddf --database dfUuoKZcegsyuW4bjhZx4w --execute CREATE TABLE `stock_alerts` (\n\t`id` int AUTO_INCREMENT NOT NULL,\n\t`sku` varchar(128),\n\t`alertType` varchar(64) NOT NULL,\n\t`severity` enum('CRITICAL','HIGH','MEDIUM','LOW','INFO') NOT NULL DEFAULT 'INFO',\n\t`message` text NOT NULL,\n\t`isRead` boolean NOT NULL DEFAULT false,\n\t`slackSent` boolean NOT NULL DEFAULT false,\n\t`createdAt` timestamp NOT NULL DEFAULT (now()),\n\tCONSTRAINT `stock_alerts_id` PRIMARY KEY(`id`)\n);",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1753
+}
